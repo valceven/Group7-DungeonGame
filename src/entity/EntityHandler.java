@@ -2,6 +2,7 @@ package entity;
 
 import main.GamePanel;
 import main.KeyHandler;
+import objects.OBJ_mage;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -15,14 +16,22 @@ public class EntityHandler {
     Player player;
     private EntityHandler(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
-        player = new Player(gamePanel, keyH);
-//        enemyList.add(new Gob(15, 15, "down", new gobClass.Fighter(), new gobSize.Normal(), gamePanel));
-//        enemyList.add(new Gob(15, 20, "down", new gobClass.Fighter(), new gobSize.Mini(), gamePanel));
-//        enemyList.add(new Gob(20, 15, "down", new gobClass.Archer(), new gobSize.Normal(), gamePanel));
-//        enemyList.add(new Gob(20, 20, "down", new gobClass.Archer(), new gobSize.Mini(), gamePanel));
-//        enemyList.add(new SpGob.Imp(10, 20, "down", gamePanel));
-//        enemyList.add(new SpGob.Mystic(10, 20, "down", gamePanel));
-        enemyList.add(new Slime(15, 15, "down", gamePanel));
+        player = new Player(gamePanel, keyH, new PlayerClass.Knight());
+  //      enemyList.add(new Gob(15, 15, "down", new gobClass.Fighter(), new gobSize.Normal(), gamePanel));
+       enemyList.add(new Gob(25, 20, "down", new gobClass.Fighter(), new gobSize.Mini(), gamePanel));
+        enemyList.add(new Gob(20, 15, "down", new gobClass.Archer(), new gobSize.Normal(), gamePanel));
+        enemyList.add(new Gob(20, 20, "down", new gobClass.Archer(), new gobSize.Mini(), gamePanel));
+        enemyList.add(new SpGob.Imp(16, 20, "down", gamePanel));
+        enemyList.add(new SpGob.Mystic(17, 20, "down", gamePanel));
+        enemyList.add(new Slime(15, 18, "down", gamePanel));
+
+
+//        enemyList = new OBJ_mage();
+//        gamePanel.obj[0].worldX = mage.worldx * gamePanel.tileSize;
+//        gamePanel.obj[0].worldY = 21 * gamePanel.tileSize;
+        // add new object to list
+        // set worldX of new object to enemy.worldX*tilesize
+        // set the same to y
 
     }
     public static synchronized EntityHandler getInstance(GamePanel gamePanel){
@@ -41,11 +50,10 @@ public class EntityHandler {
     }
 
     public void draw(Graphics2D graphics) {
-        player.draw(graphics);
         for (Enemy e: enemyList) {
             e.draw(graphics);
         }
-
+        player.draw(graphics);
     }
 
     public Player getPlayer() {
@@ -59,4 +67,5 @@ public class EntityHandler {
     public void spawnProjectile(int x, int y, String dir, GamePanel gamePanel, String side) {
         projectiles.add(new Projectile(x, y, dir, gamePanel, side));
     }
+
 }

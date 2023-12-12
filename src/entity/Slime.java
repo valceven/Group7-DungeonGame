@@ -76,14 +76,20 @@ class Slime extends Enemy {
 
     @Override
     public void draw(Graphics2D graphics) {
-        //BufferedImage image = enemySpr[spriteNum];
         BufferedImage image = enemySpr[0];
-        if (image != null) {
-            graphics.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
-        } else {
-            graphics.setColor(Color.MAGENTA);
-            graphics.fillRect(screenX, screenY, gamePanel.tileSize, gamePanel.tileSize);
-            graphics.drawRect(screenX, screenY, gamePanel.tileSize, gamePanel.tileSize);
+
+        int ascreenX = worldX - gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX;
+        int ascreenY = worldY - gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY;
+        if (worldX + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldX - gamePanel.entityHandler.getPlayer().screenX &&
+                worldX - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX &&
+                worldY + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldY - gamePanel.entityHandler.getPlayer().screenY &&
+                worldY - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY) {
+            if (image != null) {
+                graphics.drawImage(image, ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize, null);
+            } else {
+                graphics.setColor(Color.MAGENTA);
+                graphics.fillRect(ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize);
+            }
         }
     }
 }

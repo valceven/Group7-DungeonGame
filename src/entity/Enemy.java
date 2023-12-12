@@ -33,29 +33,29 @@ public abstract class Enemy extends Entity {
 
     public abstract void draw(Graphics2D graphics);
     void detectPlayer(Player p) {
-        if ((state == AIState.IDLE) && 5 <= Math.sqrt(Math.pow(worldX - p.worldX, 2) + Math.pow(worldY - p.worldY, 2))) {
+        if ((state == AIState.IDLE) &&  1 <= Math.sqrt(Math.pow(worldX - p.worldX, 2) + Math.pow(worldY - p.worldY, 2))) {
             state = AIState.COMBAT;
         }
     }
     void moveTowardsPlayer(Player p) {
         if (state == AIState.COMBAT) {
-            worldX += (int) (speed * Math.cos(Math.atan2(worldY - p.worldY, worldX - p.worldX)));
-            worldY += (int) (speed * Math.sin(Math.atan2(worldY - p.worldY, worldX - p.worldX)));
+            worldX -= (int) (speed * Math.cos(Math.atan2(worldY - p.worldY, worldX - p.worldX)));
+            worldY -= (int) (speed * Math.sin(Math.atan2(worldY - p.worldY, worldX - p.worldX)));
         }
     }
     void strafeOnPlayer(Player p) {
         if (state == AIState.COMBAT) {
             if (worldX == p.worldX) {
                 if (p.worldY > worldY) {
-                    shootPlayer(p, 'r');
+                 //   shootPlayer(p, 'r');
                 } else {
-                    shootPlayer(p, 'l');
+                 //   shootPlayer(p, 'l');
                 }
             } else if (worldY == p.worldY) {
                 if (p.worldX > worldX) {
-                    shootPlayer(p, 'u');
+                 //   shootPlayer(p, 'u');
                 } else {
-                    shootPlayer(p, 'd');
+                  //  shootPlayer(p, 'd');
                 }
             }
             if (direction.equals("up") || direction.equals("down")) {

@@ -17,6 +17,7 @@ abstract class SpGob extends Enemy {
         private final BufferedImage[] enemyDown = new BufferedImage[8];
         private final BufferedImage[] enemyLeft = new BufferedImage[8];
         private final BufferedImage[] enemyRight = new BufferedImage[8];
+
         public Imp(int x, int y, String dir, GamePanel gamePanel) {
             super(x, y, dir, gamePanel);
             try {
@@ -33,7 +34,9 @@ abstract class SpGob extends Enemy {
 
         @Override
         public void update(Player p) {
+            detectPlayer(p);
 
+            moveTowardsPlayer(p);
         }
 
         @Override
@@ -45,19 +48,28 @@ abstract class SpGob extends Enemy {
                 case "down" -> enemyDown[spriteNum];
                 default -> null;
             };
-            if (image != null) {
-                graphics.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
-            } else {
-                graphics.setColor(Color.RED);
-                graphics.fillRect(screenX, screenY, gamePanel.tileSize, gamePanel.tileSize);
+            int ascreenX = worldX - gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX;
+            int ascreenY = worldY - gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY;
+            if (worldX + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldX - gamePanel.entityHandler.getPlayer().screenX &&
+                    worldX - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX &&
+                    worldY + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldY - gamePanel.entityHandler.getPlayer().screenY &&
+                    worldY - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY) {
+                if (image != null) {
+                    graphics.drawImage(image, ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize, null);
+                } else {
+                    graphics.setColor(Color.RED);
+                    graphics.fillRect(ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize);
+                }
             }
         }
     }
+
     public static class Mystic extends SpGob {
         private final BufferedImage[] enemyUp = new BufferedImage[8];
         private final BufferedImage[] enemyDown = new BufferedImage[8];
         private final BufferedImage[] enemyLeft = new BufferedImage[8];
         private final BufferedImage[] enemyRight = new BufferedImage[8];
+
         public Mystic(int x, int y, String dir, GamePanel gamePanel) {
             super(x, y, dir, gamePanel);
             try {
@@ -74,7 +86,8 @@ abstract class SpGob extends Enemy {
 
         @Override
         public void update(Player p) {
-
+            detectPlayer(p);
+            moveTowardsPlayer(p);
         }
 
         @Override
@@ -86,11 +99,18 @@ abstract class SpGob extends Enemy {
                 case "down" -> enemyDown[spriteNum];
                 default -> null;
             };
-            if (image != null) {
-                graphics.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
-            } else {
-                graphics.setColor(Color.BLUE);
-                graphics.fillRect(screenX, screenY, gamePanel.tileSize, gamePanel.tileSize);
+            int ascreenX = worldX - gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX;
+            int ascreenY = worldY - gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY;
+            if (worldX + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldX - gamePanel.entityHandler.getPlayer().screenX &&
+                    worldX - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX &&
+                    worldY + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldY - gamePanel.entityHandler.getPlayer().screenY &&
+                    worldY - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY) {
+                if (image != null) {
+                    graphics.drawImage(image, ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize, null);
+                } else {
+                    graphics.setColor(Color.BLUE);
+                    graphics.fillRect(ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize);
+                }
             }
         }
     }

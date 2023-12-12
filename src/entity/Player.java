@@ -1,6 +1,5 @@
 package entity;
 
-import entity.Entity;
 import main.GamePanel;
 import main.KeyHandler;
 
@@ -15,40 +14,37 @@ public class Player extends Entity {
     KeyHandler keyH;
     public final int screenX;
     public final int screenY;
-    private BufferedImage mageLeft,mageRight;
+    private BufferedImage mageLeft, mageRight;
     private BufferedImage[] knightLeft = new BufferedImage[8];
     private BufferedImage[] knightRight = new BufferedImage[8];
     private BufferedImage[] knightUp = new BufferedImage[8];
     private BufferedImage[] knightDown = new BufferedImage[8];
-    private String characterType;
+    private PlayerClass playerClass; // You can use this to represent the player's class
 
-    public Player(GamePanel gamePanel, KeyHandler keyH){
+    public Player(GamePanel gamePanel, KeyHandler keyH, PlayerClass playerClass) {
         this.gamePanel = gamePanel;
         this.keyH = keyH;
-        screenX = gamePanel.screenWidth/2 - (gamePanel.tileSize/2);
-        screenY = gamePanel.screenWidth/2 - (gamePanel.tileSize/2);
+        this.playerClass = playerClass;
+        screenX = gamePanel.screenWidth / 2 - (gamePanel.tileSize / 2);
+        screenY = gamePanel.screenWidth / 2 - (gamePanel.tileSize / 2);
         setDefaultValues();
         getPlayerImage();
     }
-
-
     public void setDefaultValues(){
         worldX = gamePanel.tileSize * 16;
         worldY = gamePanel.tileSize * 18;
         speed = 4;
         direction = "down";
-
         maxHp = 11;
         hp = 1;
     }
-
     public void getPlayerImage() {
         try {
             for (int i = 1; i <= 8; i++) {
-                knightLeft[i - 1] = ImageIO.read(getClass().getResourceAsStream("/player/player_left" + i + ".png"));
-                knightRight[i - 1] = ImageIO.read(getClass().getResourceAsStream("/player/player_right" + i + ".png"));
-                knightUp[i - 1] = ImageIO.read(getClass().getResourceAsStream("/player/player_up" + i + ".png"));
-                knightDown[i - 1] = ImageIO.read(getClass().getResourceAsStream("/player/player_down" + i + ".png"));
+                knightLeft[i - 1] = ImageIO.read(getClass().getResourceAsStream("/player/" + playerClass.getName() +"_left" + i + ".png"));
+                knightRight[i - 1] = ImageIO.read(getClass().getResourceAsStream("/player/" + playerClass.getName() +"_right" + i + ".png"));
+                knightUp[i - 1] = ImageIO.read(getClass().getResourceAsStream("/player/" + playerClass.getName() +"_up" + i + ".png"));
+                knightDown[i - 1] = ImageIO.read(getClass().getResourceAsStream("/player/" + playerClass.getName() +"_down" + i + ".png"));
             }
         } catch (IOException | IllegalArgumentException e) {
             e.printStackTrace();
@@ -110,6 +106,7 @@ public class Player extends Entity {
         if (image != null) {
             graphics.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
         } else {
+           // graphics.drawImage(error_image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
             graphics.setColor(Color.BLACK);
             graphics.fillRect(screenX, screenY, gamePanel.tileSize, gamePanel.tileSize);
         }

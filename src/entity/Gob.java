@@ -20,7 +20,7 @@ class Gob extends Enemy {
         super(x, y, dir, gamePanel);
         this.gc = gc;
         this.gs = gs;
-        speed = this.gc.speedMult();
+        speed = 2*this.gc.speedMult();
         attackSpeed = this.gc.attackSpeed();
         try {
             for (int i = 0; i < 8; i++) {
@@ -62,11 +62,18 @@ class Gob extends Enemy {
             case "down" -> enemyDown[spriteNum];
             default -> null;
         };
-        if (image != null) {
-            graphics.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
-        } else {
-            graphics.setColor(Color.GREEN);
-            graphics.fillRect(screenX, screenY, gamePanel.tileSize, gamePanel.tileSize);
+        int ascreenX = worldX - gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX;
+        int ascreenY = worldY - gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY;
+        if (worldX + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldX - gamePanel.entityHandler.getPlayer().screenX &&
+                worldX - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX &&
+                worldY + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldY - gamePanel.entityHandler.getPlayer().screenY &&
+                worldY - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY) {
+            if (image != null) {
+                graphics.drawImage(image, ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize, null);
+            } else {
+                graphics.setColor(Color.GREEN);
+                graphics.fillRect(ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize);
+            }
         }
     }
 }

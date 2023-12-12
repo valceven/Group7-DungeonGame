@@ -1,12 +1,16 @@
 package main;
 import entity.EntityHandler;
+
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
 import objects.*;
 import tile.*;
 public class GamePanel extends JPanel implements Runnable{
     final int originalTileSize = 16; // 16x16 tile
-    int x;
     final int scaleValue = 3;
     public final int tileSize = originalTileSize * scaleValue; // 48x48 tile
     public final int maxScreenColumn = 16;
@@ -25,12 +29,18 @@ public class GamePanel extends JPanel implements Runnable{
     public AssetSetter aSetter = new AssetSetter(this);
     public EntityHandler entityHandler = EntityHandler.getInstance(this);
     public UI ui = new UI(this);
-    public GamePanel(){
+    static BufferedImage error_image;
+    public GamePanel() throws IOException {
         this.setPreferredSize(new Dimension(screenWidth,screenHeight));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
         this.addKeyListener(entityHandler.getKeyH());
         this.setFocusable(true);
+//        try {
+//            error_image = ImageIO.read(getClass().getResourceAsStream("/error.png"));
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
     }
     public void setUpGame(){
         aSetter.setObject();
