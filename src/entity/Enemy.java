@@ -14,6 +14,13 @@ public abstract class Enemy extends Entity {
     public final int screenY;
     private int cooldown = 0;
     int attackSpeed;
+    private boolean markedForRemoval = false;
+    public void markForRemoval() {
+        markedForRemoval = true;
+    }
+    public boolean isMarkedForRemoval() {
+        return markedForRemoval;
+    }
 
     public Enemy(int x, int y, String dir, GamePanel gamePanel) {
         this.gamePanel = gamePanel;
@@ -59,22 +66,22 @@ public abstract class Enemy extends Entity {
                 }
             }
             if (direction.equals("up") || direction.equals("down")) {
-                worldX += (int) (speed * Math.cos(Math.atan2(worldY - p.worldY, worldX - p.worldX)));
+                worldX -= (int) (speed * Math.cos(Math.atan2(worldY - p.worldY, worldX - p.worldX)));
             } else {
-                worldY += (int) (speed * Math.sin(Math.atan2(worldY - p.worldY, worldX - p.worldX)));
+                worldY -= (int) (speed * Math.sin(Math.atan2(worldY - p.worldY, worldX - p.worldX)));
             }
         }
     }
     void shootPlayer(Player p, char c) {
         if (cooldown < 0) {
             if (c == 'l') {
-                gamePanel.entityHandler.spawnProjectile(screenX, screenY, "left", gamePanel, "enemy");
+                gamePanel.entityHandler.spawnProjectile(screenX, screenY, new ProjType.arrow(), "left", gamePanel, "enemy");
             } else if (c == 'r') {
-                gamePanel.entityHandler.spawnProjectile(screenX, screenY, "right", gamePanel, "enemy");
+                gamePanel.entityHandler.spawnProjectile(screenX, screenY, new ProjType.arrow(),  "right", gamePanel, "enemy");
             } else if (c == 'u') {
-                gamePanel.entityHandler.spawnProjectile(screenX, screenY, "up", gamePanel, "enemy");
+                gamePanel.entityHandler.spawnProjectile(screenX, screenY, new ProjType.arrow(),  "up", gamePanel, "enemy");
             } else {
-                gamePanel.entityHandler.spawnProjectile(screenX, screenY, "down", gamePanel, "enemy");
+                gamePanel.entityHandler.spawnProjectile(screenX, screenY, new ProjType.arrow(),  "down", gamePanel, "enemy");
             }
             cooldown += attackSpeed;
         } else {

@@ -2,15 +2,15 @@ package entity;
 
 interface PlayerClass {
 
-    void attack();
+    String attack();
 
     String getName();
 
     class Knight implements PlayerClass {
 
         @Override
-        public void attack() {
-            System.out.println("Knight attacks with a sword!");
+        public String attack() {
+            return ("knight");
         }
 
         @Override
@@ -22,8 +22,8 @@ interface PlayerClass {
     class Archer implements PlayerClass {
 
         @Override
-        public void attack() {
-            System.out.println("Archer attacks with a bow!");
+        public String attack() {
+            return ("Archer shoots an arrow!");
         }
 
         @Override
@@ -35,8 +35,8 @@ interface PlayerClass {
     class Mage implements PlayerClass {
 
         @Override
-        public void attack() {
-            System.out.println("Mage casts a spell!");
+        public String attack() {
+            return ("Mage casts a spell!");
         }
 
         @Override

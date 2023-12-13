@@ -1,24 +1,25 @@
 package entity;
 
 import main.GamePanel;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
+
+import static main.GamePanel.error_image;
 
 public class Projectile extends Entity {
     GamePanel gamePanel;
     public final int screenX;
     public final int screenY;
     String side;
-
-    private BufferedImage[] projUp = new BufferedImage[8];
-    private BufferedImage[] projDown = new BufferedImage[8];
-    private BufferedImage[] projLeft = new BufferedImage[8];
-    private BufferedImage[] projRight = new BufferedImage[8];
-    public Projectile(int x, int y, String dir, GamePanel gamePanel, String side) {
+    ProjType pt;
+    boolean sprMissing = false;
+    private final BufferedImage[] projSpr = new BufferedImage[8];
+    public Projectile(int x, int y, ProjType pt, String dir, GamePanel gamePanel, String side) {
         this.gamePanel = gamePanel;
+        this.pt = pt;
         screenX = gamePanel.screenWidth/2 - (gamePanel.tileSize/2);
         screenY = gamePanel.screenWidth/2 - (gamePanel.tileSize/2);
         this.side = side;
@@ -27,35 +28,43 @@ public class Projectile extends Entity {
         worldY = gamePanel.tileSize * y;
         direction = dir;
         speed = 4;
-        try {
-            for (int i = 0; i < 8; i++) {
-                projLeft[i] = ImageIO.read(getClass().getResourceAsStream("/proj/arrow_left" + i + ".png"));
-                projRight[i] = ImageIO.read(getClass().getResourceAsStream("/proj/arrow_right" + i + ".png"));
-                projUp[i] = ImageIO.read(getClass().getResourceAsStream("/proj/arrow_up" + i + ".png"));
-                projDown[i] = ImageIO.read(getClass().getResourceAsStream("/proj/arrow_down" + i + ".png"));
+            for (int i = 0; i < pt.frames(); i++) {
+                try {
+                    projSpr[i] =  ImageIO.read(getClass().getResourceAsStream("/proj/" + this.pt.getProjName() + i + ".png"));
+                } catch (IOException | IllegalArgumentException e) {
+                    System.err.println("missing projectile sprites");
+                    sprMissing = true;
+                    break;
+                }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void update(Player p) {
 
+    }
+
+    public void update(Player p) {
+        //System.out.println(pt.getProjName() + " exists");
+        spriteCounter += 7.5;
+        if (spriteCounter == 60) {
+            spriteNum++;
+            if (spriteNum >= pt.frames()) {
+                spriteNum = 1;
+            }
+            spriteCounter = 0;
+        }
     }
     public void draw(Graphics2D graphics) {
-        BufferedImage image = switch (direction) {
-            case "left" -> projLeft[spriteNum];
-            case "right" -> projRight[spriteNum];
-            case "up" -> projUp[spriteNum];
-            case "down" -> projDown[spriteNum];
-            default -> null;
-        };
-        try {
-            graphics.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
-        } catch (NullPointerException e) {
-            graphics.setColor(Color.BLUE);
-            graphics.fillRect(screenX, screenY, gamePanel.tileSize, gamePanel.tileSize);
-        }
+        int ascreenX = worldX - gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX;
+        int ascreenY = worldY - gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY;
+//        if (worldX + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldX - gamePanel.entityHandler.getPlayer().screenX &&
+//                worldX - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX &&
+//                worldY + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldY - gamePanel.entityHandler.getPlayer().screenY &&
+//                worldY - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY) {
+            if (!sprMissing) {
+                graphics.drawImage(projSpr[spriteNum], ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize, null);
+            } else {
+                graphics.setColor(Color.MAGENTA);
+                graphics.fillRect(ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize);
+                graphics.drawImage(error_image, ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize, null);
+            }
+//        }
     }
-
-
 }

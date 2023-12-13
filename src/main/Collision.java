@@ -1,5 +1,9 @@
 package main;
+import entity.Enemy;
 import entity.Entity;
+import entity.Player;
+
+import java.util.ArrayList;
 
 public class Collision {
 
@@ -213,11 +217,45 @@ public class Collision {
                 break;
         }
     }
-//    public int checkEntity() {
-//
-//    }
+    public int checkEntity(Player entity, ArrayList<Enemy> target) {
+        int index = 999;
+
+        entity.solidArea.x = entity.worldX + entity.solidArea.x;
+        entity.solidArea.y = entity.worldY + entity.solidArea.y;
+
+        for (int i = 0; i < target.size(); i++) {
+            Enemy enemy = target.get(i);
+            if (enemy != null) {
+                enemy.solidArea.x = enemy.worldX + enemy.solidArea.x;
+                enemy.solidArea.y = enemy.worldY + enemy.solidArea.y;
+
+                switch (entity.direction) {
+                    case "up":
+                        entity.solidArea.y -= entity.speed;
+                        break;
+                    case "down":
+                        entity.solidArea.y += entity.speed;
+                        break;
+                    case "left":
+                        entity.solidArea.x -= entity.speed;
+                        break;
+                    case "right":
+                        entity.solidArea.x += entity.speed;
+                        break;
+                }
+
+                if (entity.solidArea.intersects(enemy.solidArea)) {
+                    entity.collide = true;
+                    index = i;
+                }
+            }
+        }
+
+        return index;
+    }
+
 //    public int checkPlayer() {
-//
+
 //    }
 //    public int checkEnemy() {
 //

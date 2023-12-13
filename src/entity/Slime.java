@@ -7,11 +7,14 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
+import static main.GamePanel.error_image;
+
 class Slime extends Enemy {
     private BufferedImage[] enemySpr = new BufferedImage[8];
     public Slime(int x, int y, String dir, GamePanel gamePanel) {
         super(x, y, dir, gamePanel);
         speed = 1;
+        hp = 100;
         try {
             for (int i = 0; i < 1; i++) {
                 enemySpr[i] = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/enemy/slime" + i + ".png")));
@@ -22,11 +25,22 @@ class Slime extends Enemy {
     }
     @Override
     public void update(Player p) {
+        if (hp <= 0) {
+            System.out.println("Slime dies");
+            EntityHandler.getInstance(gamePanel).spawnBlood(worldX, worldY, new ProjType.blood(), gamePanel);
+
+            // Mark the slime for removal
+            markForRemoval();
+
+            return; // Exit the method if the slime is dead
+        }
+        System.out.println("Slime HP -1");
+        hp--;
         //detectPlayer(p);
         //moveTowardsPlayer(p);
         collide = false;
         gamePanel.collision.checkTile(this);
-       // gamePanel.collision.checkPlayer(this);
+      //  gamePanel.collision.checkPlayer(this);
 
         if (getCooldown() > 0) {
             setCooldown(getCooldown()-1);
@@ -89,6 +103,7 @@ class Slime extends Enemy {
             } else {
                 graphics.setColor(Color.MAGENTA);
                 graphics.fillRect(ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize);
+                graphics.drawImage(error_image, ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize, null);
             }
         }
     }
