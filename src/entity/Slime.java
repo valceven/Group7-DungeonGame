@@ -1,5 +1,6 @@
 package entity;
 
+import main.Collision;
 import main.GamePanel;
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -7,17 +8,20 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
-import static main.GamePanel.error_image;
+
+import static entity.EntityHandler.error_image;
 
 class Slime extends Enemy {
-    private BufferedImage[] enemySpr = new BufferedImage[8];
-    public Slime(int x, int y, String dir, GamePanel gamePanel) {
-        super(x, y, dir, gamePanel);
+    private final BufferedImage[] enemySprL = new BufferedImage[8];
+    private final BufferedImage[] enemySprR = new BufferedImage[8];
+    public Slime(int x, int y, GamePanel gamePanel) {
+        super(x, y, gamePanel);
         speed = 1;
-        hp = 100;
+        hp = 5;
         try {
-            for (int i = 0; i < 1; i++) {
-                enemySpr[i] = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/enemy/slime" + i + ".png")));
+            for (int i = 0; i < 8; i++) {
+                enemySprL[i] = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/boss_sprite/sir_jay" + i + ".png")));
+                enemySprR[i] = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/boss_sprite/sir_jay" + i + ".png")));
             }
         } catch (IOException | IllegalArgumentException | NullPointerException e) {
             System.err.println("missing slime sprites");
@@ -26,27 +30,21 @@ class Slime extends Enemy {
     @Override
     public void update(Player p) {
         if (hp <= 0) {
-            System.out.println("Slime dies");
-            EntityHandler.getInstance(gamePanel).spawnBlood(worldX, worldY, new ProjType.blood(), gamePanel);
-
-            // Mark the slime for removal
+            EntityHandler.getInstance(gamePanel).spawnBlood(worldX, worldY, gamePanel);
             markForRemoval();
-
-            return; // Exit the method if the slime is dead
+            gamePanel.win();
+            return;
         }
-        System.out.println("Slime HP -1");
-        hp--;
-        //detectPlayer(p);
-        //moveTowardsPlayer(p);
+        detectPlayer(p);
+
         collide = false;
-        gamePanel.collision.checkTile(this);
-      //  gamePanel.collision.checkPlayer(this);
+        Collision.getInstance(gamePanel).checkTile(this);
+        //gamePanel.collision.checkPlayer(this);
 
         if (getCooldown() > 0) {
             setCooldown(getCooldown()-1);
             collide = false;
-            gamePanel.collision.checkTile(this);
-
+            Collision.getInstance(gamePanel).checkTile(this);
             if (!collide) {
                 switch (direction) {
                     case "up":
@@ -66,21 +64,23 @@ class Slime extends Enemy {
         } else {
             Random random = new Random();
             int i = random.nextInt(100)+1;
-            if (i <= 25) {
+            if (i <= 20) {
+                moveTowardsPlayer(p);
+            } else if (i <= 40) {
                 direction = "up";
-            } if (i > 25 && i <= 50) {
+            } else if (i <= 60) {
                 direction = "down";
-            } if (i > 50 && i <= 75) {
+            } else if (i <= 80) {
                 direction = "left";
-            } if (i > 75) {
+            } else {
                 direction = "right";
             }
-            setCooldown(10);
+            setCooldown(20);
         }
         spriteCounter += 7.5;
         if (spriteCounter == 60) {
             spriteNum++;
-            if (spriteNum >= 8) {
+            if (spriteNum > 7) {
                 spriteNum = 1;
             }
             spriteCounter = 0;
@@ -90,16 +90,19 @@ class Slime extends Enemy {
 
     @Override
     public void draw(Graphics2D graphics) {
-        BufferedImage image = enemySpr[0];
+        BufferedImage image = switch (direction) {
+        case "right", "up" -> enemySprR[spriteNum];
+        default -> enemySprL[spriteNum];
+        };
 
-        int ascreenX = worldX - gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX;
-        int ascreenY = worldY - gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY;
-        if (worldX + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldX - gamePanel.entityHandler.getPlayer().screenX &&
-                worldX - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX &&
-                worldY + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldY - gamePanel.entityHandler.getPlayer().screenY &&
-                worldY - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY) {
+        int ascreenX = worldX - EntityHandler.getInstance(gamePanel).getPlayer().worldX + EntityHandler.getInstance(gamePanel).getPlayer().screenX;
+        int ascreenY = worldY - EntityHandler.getInstance(gamePanel).getPlayer().worldY + EntityHandler.getInstance(gamePanel).getPlayer().screenY;
+        if (worldX + gamePanel.tileSize > EntityHandler.getInstance(gamePanel).getPlayer().worldX - EntityHandler.getInstance(gamePanel).getPlayer().screenX &&
+                worldX - gamePanel.tileSize < EntityHandler.getInstance(gamePanel).getPlayer().worldX + EntityHandler.getInstance(gamePanel).getPlayer().screenX &&
+                worldY + gamePanel.tileSize > EntityHandler.getInstance(gamePanel).getPlayer().worldY - EntityHandler.getInstance(gamePanel).getPlayer().screenY &&
+                worldY - gamePanel.tileSize < EntityHandler.getInstance(gamePanel).getPlayer().worldY + EntityHandler.getInstance(gamePanel).getPlayer().screenY) {
             if (image != null) {
-                graphics.drawImage(image, ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize, null);
+                graphics.drawImage(image, ascreenX-(gamePanel.tileSize/2), ascreenY-(gamePanel.tileSize/2), gamePanel.tileSize*2, gamePanel.tileSize*2, null);
             } else {
                 graphics.setColor(Color.MAGENTA);
                 graphics.fillRect(ascreenX, ascreenY, gamePanel.tileSize, gamePanel.tileSize);

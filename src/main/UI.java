@@ -1,4 +1,5 @@
 package main;
+import entity.EntityHandler;
 import objects.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -29,7 +30,7 @@ public class UI {
 
         graphics.drawImage(hpImage[11],x,y,gamePanel.tileSize*9,(int)(gamePanel.tileSize*1.75),null);
 
-        i = gamePanel.entityHandler.getPlayer().hp;
+        i = EntityHandler.getInstance(gamePanel).getPlayer().hp;
 
         graphics.drawImage(hpImage[i],x,y,gamePanel.tileSize*9,(int)(gamePanel.tileSize*1.75),null);
     }

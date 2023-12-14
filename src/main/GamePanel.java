@@ -1,10 +1,12 @@
 package main;
 import entity.EntityHandler;
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
+
 import objects.*;
 import tile.*;
 public class GamePanel extends JPanel implements Runnable{
@@ -18,29 +20,18 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; //576 px
     public final int maxWorldColumn = 100;
     public final int maxWorldRow = 100;
-    public Collision collision = new Collision(this);
-    public objectParent obj[] = new objectParent[10];
+    public objectParent[] obj = new objectParent[10];
     Thread gameThread;
     int FPS = 60;
     TileManager tileM = new TileManager(this);
-    public AssetSetter aSetter = new AssetSetter(this);
-    public EntityHandler entityHandler = EntityHandler.getInstance(this);
+//    public AssetSetter aSetter = new AssetSetter(this);
     public UI ui = new UI(this);
-    public static BufferedImage error_image;
-    public GamePanel() throws IOException {
+    public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth,screenHeight));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
-        this.addKeyListener(entityHandler.getKeyH());
+        this.addKeyListener(EntityHandler.getInstance(this).getKeyH());
         this.setFocusable(true);
-        try {
-            error_image = ImageIO.read(getClass().getResourceAsStream("/proj/error.png"));
-        } catch (IOException | IllegalArgumentException e) {
-            System.err.println("missing error.png");
-        }
-    }
-    public void setUpGame(){
-        aSetter.setObject();
     }
     public void startGameThread(){
         gameThread = new Thread(this);
@@ -67,7 +58,7 @@ public class GamePanel extends JPanel implements Runnable{
         }
     }
     public void update(){
-        entityHandler.update();
+        EntityHandler.getInstance(this).update();
     }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -81,9 +72,29 @@ public class GamePanel extends JPanel implements Runnable{
                     objectParent.draw(graphics, this);
                 }
             }
-            entityHandler.draw(graphics);
+            EntityHandler.getInstance(this).draw(graphics);
             ui.draw(graphics);
             graphics.dispose();
 //        }
+    }
+
+    public void lose() {
+        System.out.println("Game Over!");
+        closeApp();
+    }
+    public void win() {
+        System.out.println("You Win! :)");
+        closeApp();
+    }
+
+    private void closeApp() {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(GamePanel.this);
+                frame.dispose();
+                System.exit(0);
+            }
+        });
     }
 }

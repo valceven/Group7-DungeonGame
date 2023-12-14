@@ -28,7 +28,6 @@ public class TitleScreen extends JPanel {
     public final int screenWidth = tileSize * maxScreenColumn; // 768 px
     public final int screenHeight = tileSize * maxScreenRow; //576 px
     public static String characterType = "sword";
-    GamePanel gamePanel;
     static Sound sound = new Sound();
 
 
@@ -189,19 +188,14 @@ public class TitleScreen extends JPanel {
 
     public void startGame(JFrame window){
         window.getContentPane().removeAll();
-        try {
-            gamePanel = new GamePanel();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        window.add(gamePanel);
+        GamePanel gp = new GamePanel();
+        window.add(gp);
         window.pack();
         window.setLocationRelativeTo(null);
         window.setVisible(true);
-        gamePanel.startGameThread();
+        gp.startGameThread();
 
-        gamePanel.setUpGame();
-        gamePanel.requestFocusInWindow();
+        gp.requestFocusInWindow();
     }
 
     public void showHelpScreen(JFrame parent){

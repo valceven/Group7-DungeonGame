@@ -10,12 +10,12 @@ interface PlayerClass {
 
         @Override
         public String attack() {
-            return ("knight");
+            return ("Knight stabs!");
         }
 
         @Override
         public String getName() {
-            return "player";
+            return "Knight";
         }
     }
 

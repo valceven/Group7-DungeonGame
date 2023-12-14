@@ -4,7 +4,15 @@ interface gobClass {
     String getClassText();
     int attackSpeed();
     int speedMult();
+
+    char getAxis();
+
     class Archer implements gobClass {
+        char axis;
+        public Archer(char x) {
+            axis = x;
+        }
+
         @Override
         public String getClassText() {
             return "Archer";
@@ -12,12 +20,16 @@ interface gobClass {
 
         @Override
         public int attackSpeed() {
-            return 5;
+            return 40;
         }
 
         @Override
         public int speedMult() {
-            return 2;
+            return 1;
+        }
+
+        public char getAxis(){
+            return axis;
         }
     }
     class Fighter implements gobClass {
@@ -28,12 +40,17 @@ interface gobClass {
 
         @Override
         public int attackSpeed() {
-            return 0;
+            return 30;
         }
 
         @Override
         public int speedMult() {
-            return 1;
+            return 2;
+        }
+
+        @Override
+        public char getAxis() {
+            return 0;
         }
     }
 }

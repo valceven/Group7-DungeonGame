@@ -12,7 +12,7 @@ public interface ProjType{
     class arrow implements ProjType {
         @Override
         public String getProjName() {
-            return "arrowUp";
+            return "blood";
         }
 
         @Override
@@ -23,7 +23,24 @@ public interface ProjType{
 
         @Override
         public int timer() {
-            return 10;
+            return 50;
+        }
+    }
+    class orb implements ProjType {
+        @Override
+        public String getProjName() {
+            return "orb";
+        }
+
+        @Override
+        public int frames() {
+            return 1;
+        }
+
+
+        @Override
+        public int timer() {
+            return 50;
         }
     }
     class blood implements ProjType {
@@ -39,7 +56,7 @@ public interface ProjType{
 
         @Override
         public int timer() {
-            return 8;
+            return 16;
         }
     }
 }

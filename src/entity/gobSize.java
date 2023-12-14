@@ -4,8 +4,9 @@ interface gobSize {
     String getSizeText();
     int rangeMultiplier();
     class Normal implements gobSize {
+        @Override
         public String getSizeText() {
-            return "normal";
+            return "Normal";
         }
 
         @Override
@@ -14,8 +15,9 @@ interface gobSize {
         }
     }
     class Mini implements gobSize {
+        @Override
         public String getSizeText() {
-            return "mini";
+            return "Mini";
         }
 
         @Override

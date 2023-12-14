@@ -1,5 +1,6 @@
 package tile;
 
+import entity.EntityHandler;
 import main.GamePanel;
 import tile.Tile;
 
@@ -11,12 +12,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class TileManager {
-
     GamePanel gamePanel;
     public Tile[] tile;
     public int mapTileNum[][];
-    public TileManager(GamePanel gamePanel){
-        this.gamePanel = gamePanel;
+    public TileManager(GamePanel gp){
+        this.gamePanel = gp;
         tile = new Tile[55];
         mapTileNum = new int[gamePanel.maxWorldColumn][gamePanel.maxWorldRow];
         getTileImage();
@@ -36,7 +36,7 @@ public class TileManager {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Missing tile sprites");
         }
     }
 
@@ -68,8 +68,8 @@ public class TileManager {
             }
             br.close();
         }catch(IOException e){
-                e.printStackTrace();
-            }
+            e.printStackTrace();
+        }
     }
     public void draw(Graphics2D graphics){
 
@@ -81,13 +81,13 @@ public class TileManager {
             int tileNum = mapTileNum[worldCol][worldRow];
             int worldX = worldCol * gamePanel.tileSize;
             int worldY = worldRow * gamePanel.tileSize;
-            int screenX = worldX - gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX;
-            int screenY = worldY - gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY;
-            if(worldX + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldX - gamePanel.entityHandler.getPlayer().screenX &&
-                    worldX - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldX + gamePanel.entityHandler.getPlayer().screenX &&
-                    worldY + gamePanel.tileSize > gamePanel.entityHandler.getPlayer().worldY - gamePanel.entityHandler.getPlayer().screenY &&
-                    worldY - gamePanel.tileSize < gamePanel.entityHandler.getPlayer().worldY + gamePanel.entityHandler.getPlayer().screenY){
-            graphics.drawImage(tile[tileNum].image,screenX,screenY,gamePanel.tileSize, gamePanel.tileSize ,null);
+            int screenX = worldX - EntityHandler.getInstance(gamePanel).getPlayer().worldX + EntityHandler.getInstance(gamePanel).getPlayer().screenX;
+            int screenY = worldY - EntityHandler.getInstance(gamePanel).getPlayer().worldY + EntityHandler.getInstance(gamePanel).getPlayer().screenY;
+            if(worldX + gamePanel.tileSize > EntityHandler.getInstance(gamePanel).getPlayer().worldX - EntityHandler.getInstance(gamePanel).getPlayer().screenX &&
+                    worldX - gamePanel.tileSize < EntityHandler.getInstance(gamePanel).getPlayer().worldX + EntityHandler.getInstance(gamePanel).getPlayer().screenX &&
+                    worldY + gamePanel.tileSize > EntityHandler.getInstance(gamePanel).getPlayer().worldY - EntityHandler.getInstance(gamePanel).getPlayer().screenY &&
+                    worldY - gamePanel.tileSize < EntityHandler.getInstance(gamePanel).getPlayer().worldY + EntityHandler.getInstance(gamePanel).getPlayer().screenY){
+                graphics.drawImage(tile[tileNum].image,screenX,screenY,gamePanel.tileSize, gamePanel.tileSize ,null);
             }
             worldCol++;
             if (worldCol == gamePanel.maxWorldColumn) {
@@ -95,6 +95,6 @@ public class TileManager {
                 worldRow++;
             }
         }
-       // graphics.dispose();
+        // graphics.dispose();
     }
 }
