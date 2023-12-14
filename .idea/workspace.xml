@@ -4,199 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849b00ff-c71b-4375-ac06-207a79a23a54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/res/proj/blood3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Congratulations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="849b00ff-c71b-4375-ac06-207a79a23a54" name="Changes" comment="final nani sir ikaw na bahala namo hehehuhuhuhahahhihi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_down1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_down1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_down2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_down2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_down3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_down3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_down6.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_down6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_down7.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_down7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_down8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_left6.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_left6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_left7.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_left7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_left8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_right6.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_right6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_right7.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_right7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_right8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_up1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_up1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_up2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_up2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_up3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_up3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_up6.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_up6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_up7.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/attack/attack_knight_up7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/attack/attack_knight_up8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boss_sprite/sir_jay1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/boss_sprite/sir_jay1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boss_sprite/sir_jay2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/boss_sprite/sir_jay2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boss_sprite/sir_jay3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/boss_sprite/sir_jay3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boss_sprite/sir_jay4.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/boss_sprite/sir_jay4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boss_sprite/sir_jay5.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/boss_sprite/sir_jay5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boss_sprite/sir_jay6.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/boss_sprite/sir_jay6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boss_sprite/sir_jay7.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/boss_sprite/sir_jay7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boss_sprite/sir_jay8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_attack_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_attack_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_attack_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_attack_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_attack_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_attack_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_attack_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_attack_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_attack_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_attack_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_attack_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_attack_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_attack_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_attack_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Imp_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Imp_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_attack_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_running_left1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_running_left2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_running_left3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_running_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_running_right1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_running_right2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_running_right3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniArcher_running_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_attack_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/MiniFighter_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/MiniFighter_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_attack_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_attack_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_attack_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_attack_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_attack_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_attack_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_attack_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_attack_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_attack_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_attack_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_attack_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_attack_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_attack_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_attack_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/Mystic_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/Mystic_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_attack_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalArcher_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalArcher_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_attack_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_left3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_left3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_right3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/enemy/NormalFighter_right3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/enemy/NormalFighter_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_down0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_down1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_down2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_down3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_down4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_down5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_down6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_down7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_down8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_left0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_left1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_left2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_left3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_left4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_left5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_left6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_left7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_left8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_right0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_right1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_right2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_right3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_right4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_right5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_right6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_right7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_right8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_up0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_up1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_up2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_up3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_up4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_up5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_up6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_up7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/player/player_up8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/proj/death_anim1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/proj/death_anim2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/proj/blood1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/proj/death_anim3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/proj/blood2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/proj/death_anim4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/EntityHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/EntityHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Gob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Gob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/PlayerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PlayerClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/ProjType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/ProjType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Projectile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/SPGob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/SPGob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Slime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/gobClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/gobClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/gobSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/gobSize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Collision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Congratulations.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/TitleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TitleScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/objectParent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/objectParent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tile/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,27 +36,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Unnamed.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/acer/IdeaProjects/MAONANI",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/acer/IdeaProjects/MAONANI&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Dropbox\Notes\1. Code\Java\4\Group7-DungeonGame\res\proj" />
@@ -274,11 +86,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702438343394</updated>
-      <workItem from="1702520549589" duration="1250000" />
+      <workItem from="1702520549589" duration="1564000" />
+      <workItem from="1702522208664" duration="2087000" />
     </task>
+    <task id="LOCAL-00001" summary="final nani sir ikaw na bahala namo hehehuhuhuhahahhihi">
+      <option name="closed" value="true" />
+      <created>1702522117411</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702522117411</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="final nani sir ikaw na bahala namo hehehuhuhuhahahhihi" />
+    <option name="LAST_COMMIT_MESSAGE" value="final nani sir ikaw na bahala namo hehehuhuhuhahahhihi" />
   </component>
 </project>

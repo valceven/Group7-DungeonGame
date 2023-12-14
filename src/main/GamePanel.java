@@ -1,7 +1,7 @@
 package main;
 import entity.EntityHandler;
 import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -23,8 +23,11 @@ public class GamePanel extends JPanel implements Runnable{
     public objectParent[] obj = new objectParent[10];
     Thread gameThread;
     int FPS = 60;
+    int lvlState = 0;
     TileManager tileM = new TileManager(this);
 //    public AssetSetter aSetter = new AssetSetter(this);
+    BufferedImage win;
+    BufferedImage lose;
     public UI ui = new UI(this);
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth,screenHeight));
@@ -32,6 +35,16 @@ public class GamePanel extends JPanel implements Runnable{
         this.setDoubleBuffered(true);
         this.addKeyListener(EntityHandler.getInstance(this).getKeyH());
         this.setFocusable(true);
+        try {
+            win = ImageIO.read(getClass().getResourceAsStream("/objectz/winners_only.png"));
+        } catch (IOException e) {
+            System.err.println("win screen not found");
+        }
+        try {
+            lose = ImageIO.read(getClass().getResourceAsStream("/objectz/gameover.png"));
+        } catch (IOException e) {
+            System.err.println("game over not found");
+        }
     }
     public void startGameThread(){
         gameThread = new Thread(this);
@@ -58,7 +71,7 @@ public class GamePanel extends JPanel implements Runnable{
         }
     }
     public void update(){
-        EntityHandler.getInstance(this).update();
+         EntityHandler.getInstance(this).update();
     }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -66,6 +79,7 @@ public class GamePanel extends JPanel implements Runnable{
 //        if(gameState == titleState){
 //            ui.draw(graphics);
 //        }else{
+        if (lvlState == 0) {
             tileM.draw(graphics);
             for (objects.objectParent objectParent : obj) {
                 if (objectParent != null) {
@@ -75,26 +89,21 @@ public class GamePanel extends JPanel implements Runnable{
             EntityHandler.getInstance(this).draw(graphics);
             ui.draw(graphics);
             graphics.dispose();
+        } else if (lvlState == 1) {
+            graphics.drawImage(win, 0, 0, 768, 576, null);
+        } else if (lvlState == -1) {
+            graphics.drawImage(lose, 0, 0, 768, 576, null);
+        }
 //        }
     }
-
+    public void win() {System.out.println("You Win! :)");
+        lvlState = 1;
+        EntityHandler.getInstance(this).killAll();
+    }
     public void lose() {
         System.out.println("Game Over!");
-        closeApp();
-    }
-    public void win() {
-        System.out.println("You Win! :)");
-        closeApp();
+        lvlState = -1;
+        EntityHandler.getInstance(this).killAll();
     }
 
-    private void closeApp() {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(GamePanel.this);
-                frame.dispose();
-                System.exit(0);
-            }
-        });
-    }
 }

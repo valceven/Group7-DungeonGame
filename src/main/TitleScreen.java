@@ -52,7 +52,6 @@ public class TitleScreen extends JPanel {
             e.printStackTrace();
         }
 
-
         //Music
         sound.setFile(1);
         sound.play();
